@@ -1,0 +1,8 @@
+pydantic==1.8.2
+numpy>=1.21,<2.0
+parliament-functions==0.1.0
+Flask==2.0.2
+werkzeug==2.0.2
+azure-storage-blob==12.8.1
+psycopg2-binary==2.9.1
+fhir.resources==6.1.0

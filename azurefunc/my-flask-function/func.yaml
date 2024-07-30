@@ -1,0 +1,4 @@
+specVersion: 0.36.0
+name: my-flask-function
+runtime: python
+created: 2024-07-23T17:56:40.357013-05:00

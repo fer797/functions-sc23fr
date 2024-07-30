@@ -1,0 +1,8 @@
+specVersion: 0.36.0
+name: crudfunctions
+runtime: python
+registry: docker.io/sc23fjrl
+image: index.docker.io/sc23fjrl/crudfunctions:latest
+created: 2024-07-13T13:42:34.794287-05:00
+build:
+  builder: pack

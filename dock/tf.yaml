@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: tf
+spec:
+  template:
+    spec:
+      containers:
+        - image: sc23fjrl/tf
+          env:
+            - name: OPENWEATHERMAP_API_KEY
+              value: YOUR_API_KEY
