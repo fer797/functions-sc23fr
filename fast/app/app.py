@@ -1,7 +1,7 @@
 from fastapi import FastAPI, BackgroundTasks
-from app.medication_service import MedicationService
-from app.medication_transformation import MedicationTransformation
-from app.data_ingestion import DataIngestion
+from medication_service import MedicationService
+from medication_transformation import MedicationTransformation
+from data_ingestion import DataIngestion
 import time
 import logging
 import os
@@ -34,7 +34,7 @@ def run_background_task(background_tasks: BackgroundTasks):
     background_tasks.add_task(background_print_task)
     return {"message": "Background task started"}
 
-@app.route('/ingest_and_process')
+@app.get('/ingest_and_process')
 def ingest_and_process_data():
     logging.info("Starting data ingestion and processing")
     try:
