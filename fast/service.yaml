@@ -1,0 +1,14 @@
+# service.yaml
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: fastapi-app
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - image: sc23fjrl/fastapi-app:v1.0
+          ports:
+            - containerPort: 8080
+
