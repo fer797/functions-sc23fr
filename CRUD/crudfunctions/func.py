@@ -15,7 +15,7 @@ AZURE_BLOB_NAME = 'dataset.csv'
 POSTGRES_HOST = 'sc23fjrl.postgres.database.azure.com'
 POSTGRES_DB = 'postgres'
 POSTGRES_USER = 'sc23fjrl'
-POSTGRES_PASSWORD = 'FlexibleServer$1'
+POSTGRES_PASSWORD = 'Recordar$1'
 POSTGRES_TABLE = 'Medications'
 
 
