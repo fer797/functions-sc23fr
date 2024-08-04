@@ -8,7 +8,6 @@ spec:
   template:
     spec:
       containers:
-        - image: sc23fjrl/fastapi-app:v1.0
+        - image: sc23fjrl/fastapi-app:v1.1
           ports:
             - containerPort: 8080
-
