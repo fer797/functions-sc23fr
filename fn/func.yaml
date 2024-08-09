@@ -1,0 +1,11 @@
+specVersion: 0.36.0
+name: fn
+runtime: python
+registry: docker.io/sc23fjrl
+image: docker.io/sc23fjrl/fn:latest
+imageDigest: sha256:a415ab4653a635f51839e3f4ff9e492ec938e6b58bdf26741791506864d8ff34
+created: 2024-07-09T05:15:57.199815-05:00
+build:
+  builder: pack
+deploy:
+  namespace: default
