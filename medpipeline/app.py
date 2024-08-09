@@ -82,7 +82,7 @@ def medications():
         cursor = conn.cursor()
 
         insert_query = """
-        INSERT INTO Medications (
+        INSERT INTO medications_ingest (
             name, substitute0, substitute1, substitute2, substitute3, substitute4,
             sideEffect0, sideEffect1, sideEffect2, sideEffect3, sideEffect4, sideEffect5,
             sideEffect6, sideEffect7, sideEffect8, sideEffect9, sideEffect10, sideEffect11,
