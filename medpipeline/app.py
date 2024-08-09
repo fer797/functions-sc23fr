@@ -3,6 +3,16 @@ import pandas as pd
 from io import StringIO
 from azure.storage.blob import BlobServiceClient
 import psycopg2
+from flask import Flask, jsonify, request
+import pandas as pd
+from io import StringIO
+from azure.storage.blob import BlobServiceClient
+import psycopg2
+import os
+import json
+import requests
+app = Flask(__name__)
+
 
 # Azure Blob Storage configuration
 AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=functionssc23fjrl24;AccountKey=pkxxP0yGFTe0RIpc83jFkjmMBPifvC7CHxSpaH+8SdWaUBlAiz/AsNxkO0xcmD0Q8mdYU81PXh1Y+ASt4eSwuQ==;EndpointSuffix=core.windows.net'
@@ -16,10 +26,9 @@ POSTGRES_USER = 'sc23fjrl'
 POSTGRES_PASSWORD = 'Recordar$1'
 POSTGRES_TABLE = 'Medications'
 
-app = func.FunctionApp(http_auth_level=func.AuthLevel.FUNCTION)
 
-@app.route(route="fun")
-def fun(req: func.HttpRequest) -> func.HttpResponse:
+@app.route('/medications', methods=['GET'])
+def medications():
     logging.info('Python HTTP trigger function processed a request.')
 
     try:
@@ -100,13 +109,10 @@ def fun(req: func.HttpRequest) -> func.HttpResponse:
             "message": "Data loaded successfully",
             "first_5_records": first_5_records
         }
-        status_code = 200
+        return jsonify({"message": "Medication created successfully", "first_5_records": first_5_records}), 201
     except Exception as e:
-        response_body = {"error": str(e)}
-        status_code = 500
+        return jsonify({"error": str(e)}), 500
 
-    return func.HttpResponse(
-        body=str(response_body),
-        status_code=status_code,
-        mimetype="application/json"
-    )
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
