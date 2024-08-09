@@ -1,5 +1,4 @@
 import logging
-import azure.functions as func
 import pandas as pd
 from io import StringIO
 from azure.storage.blob import BlobServiceClient

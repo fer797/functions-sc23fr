@@ -7,6 +7,6 @@ spec:
   template:
     spec:
       containers:
-        - image: sc23fjrl/medpipeline:latest
+        - image: sc23fjrl/medpipeline:v2  # Change the tag to force a new revision
           ports:
             - containerPort: 8080
