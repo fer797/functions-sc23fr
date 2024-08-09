@@ -7,6 +7,7 @@ import logging
 import os
 
 app = FastAPI()
+logging.basicConfig(level=logging.INFO)
 
 # Initialize the database connection and service
 medication_service = MedicationService()
